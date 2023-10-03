@@ -1,0 +1,43 @@
+version: '3'
+services:
+  my-db:
+    image: mysql
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_DATABASE=tasks
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+    env_file:
+      - .env
+    volumes:
+      - ./my-db/sql:/docker-entrypoint-initdb.d
+    networks:
+      - app-network
+    restart: always
+
+
+  rest-app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8080
+    depends_on:
+      - my-db
+    environment:
+      - SPRING_JPA_HIBERNATE_DDL-AUTO=create-drop
+      - SPRING_DATASOURCE_URL=jdbc:mysql://my-db:3306/tasks
+      - SPRING_DATASOURCE_USERNAME=${SS_USER}
+      - SPRING_DATASOURCE_PASSWORD=${SS_PASSWORD}
+      - SPRING_DATASOURCE_DRIVER-CLASS-NAME=com.mysql.cj.jdbc.Driver
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.MySQLDialect
+    env_file:
+      - .env
+    networks:
+      - app-network
+    restart: always
+
+networks:
+  app-network:
