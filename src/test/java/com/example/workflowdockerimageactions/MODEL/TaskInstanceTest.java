@@ -42,7 +42,7 @@ class TaskInstanceTest {
 
     @Test
     void getTimeInHours() {
-        assertNotEquals(taskInstance.getTimeInHours(), 2);
+        assertEquals(taskInstance.getTimeInHours(), 2);
     }
 
     @Test
