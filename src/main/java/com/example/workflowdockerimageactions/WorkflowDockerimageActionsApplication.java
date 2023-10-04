@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class WorkflowDockerimageActionsApplication {
 
+    //Adding random comment
     public static void main(String[] args) {
         SpringApplication.run(WorkflowDockerimageActionsApplication.class, args);
     }
