@@ -22,4 +22,3 @@ class WorkflowDockerimageActionsApplicationTests {
     }
 
 }
-//src/test/java/com/example/workflowdockerimageactions

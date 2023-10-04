@@ -11,10 +11,9 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Display Artifact Name
-        run: |
-          artifact_name="devops-individuell" 
-
-          echo "Artifact Name: $artifact_name"
+        run: "echo Docker image would be: $IMAGE"
+        env:
+          IMAGE: ${{ github.repository }}:${{ github.head_ref }}"
