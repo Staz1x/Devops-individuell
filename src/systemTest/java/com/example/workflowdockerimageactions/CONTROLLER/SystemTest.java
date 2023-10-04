@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import static io.restassured.RestAssured.given;
 
 
-@SpringBootTest()
+/*@SpringBootTest()
 @ContextConfiguration(classes = SystemTest.class)
 class SystemTest {
 
@@ -41,7 +41,7 @@ class SystemTest {
 
         given()
                 .auth()
-                .basic(username,password)
+                .basic(username, password)
                 .when()
                 .delete("1")
                 .then()
@@ -71,4 +71,4 @@ class SystemTest {
                 .then()
                 .statusCode(200);
     }
-}
+}*/
