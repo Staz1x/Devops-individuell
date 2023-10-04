@@ -15,6 +15,6 @@ jobs:
 
       - name: Display Artifact Name
         run: |
-          artifact_name="devops-individuell" 
+          artifact_name="DEVOPS" 
 
-          echo "Artifact Name: $artifact_name"
+          echo "Artifact Name: ${artifact_name}"
