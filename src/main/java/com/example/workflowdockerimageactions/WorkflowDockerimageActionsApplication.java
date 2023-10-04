@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class WorkflowDockerimageActionsApplication {
 
+
+    //Merge fail
     public static void main(String[] args) {
         SpringApplication.run(WorkflowDockerimageActionsApplication.class, args);
     }
